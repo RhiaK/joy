@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignOutButton from './SignOut';
+import { NavItem, NavLink} from 'reactstrap';
+import './App.css';
 
 import * as routes from '../constants/routes';
 
@@ -12,18 +14,38 @@ const Navigation = ({authUser}) =>
     }
   </div>
   
-const NavigationAuth = () =>    
-    <ul>
-      <li><Link to={routes.LANDING}>Landing</Link></li>
-      <li><Link to={routes.HOME}>Home</Link></li>
-      <li><Link to={routes.ACCOUNT}>Account</Link></li>
-      <li><SignOutButton /></li>
-    </ul>
+const NavigationAuth = () => 
+	<div className="nav">
+		<h3 className="navtitle">Navigation</h3>
+		<NavItem className="navitem">
+			<Link to={routes.HOME}>Home</Link>
+		</NavItem>
+		<NavItem className="navitem">
+			<Link to={routes.ACCOUNT}>Account</Link>
+		</NavItem>
+		<NavItem className="navitem">
+			<SignOutButton />
+		</NavItem>
+	</div>			
 
 const NavigationNonAuth = () =>
-  <ul>
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-  </ul>    
+	<div className="nav">
+		<h3 className="navtitle">Navigation</h3>
+		<NavItem className="navitem">
+			<Link to={routes.HOME}>Home</Link>
+		</NavItem>
+		<NavItem className="navitem">
+			<NavLink href='#'>Inspiration</NavLink>
+		</NavItem>
+		<NavItem className="navitem">
+			<NavLink href='#'>Shop</NavLink>
+		</NavItem>
+		<NavItem className="navitem">
+			<Link to="">Freebies</Link>
+		</NavItem>
+		<NavItem className="bnavitem">
+			<Link to="">Subscribe!</Link>
+		</NavItem>
+	</div>  
 
 export default Navigation;

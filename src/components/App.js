@@ -11,8 +11,11 @@ import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
+import Header from './Header';
+import Footer from './Footer';
 import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
+import tulips from '../images/TULIP.png';
 
 class App extends Component {
   constructor(props) {
@@ -36,6 +39,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Header />
           <Navigation authUser={this.state.authUser} />
           <Route
             exact path={routes.LANDING}
@@ -61,6 +65,8 @@ class App extends Component {
             exact path={routes.ACCOUNT}
             component={() => <AccountPage />}
           />
+          <img className="img" src={tulips} alt="tulips"></img>
+          <Footer />
         </div>
       </Router>
     )
