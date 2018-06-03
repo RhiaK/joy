@@ -6,10 +6,9 @@ import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>SignIn</h1>
+  <div className="signinform">
+    <h1>Sign In</h1>
     <SignInForm history={history} />
-    <SignUpLink />
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -63,7 +62,8 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form 
+      onSubmit={this.onSubmit}>
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
@@ -79,7 +79,6 @@ class SignInForm extends Component {
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>
-
         { error && <p>{error.message}</p> }
       </form>
     );

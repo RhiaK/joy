@@ -7,7 +7,7 @@ import './App.css';
 import * as routes from '../constants/routes';
 
 const Navigation = ({authUser}) =>
-  <div>
+  <div className="nav">
     { authUser
       ? <NavigationAuth />
       : <NavigationNonAuth />
@@ -15,37 +15,51 @@ const Navigation = ({authUser}) =>
   </div>
   
 const NavigationAuth = () => 
-	<div className="nav">
+	<div>
 		<h3 className="navtitle">Navigation</h3>
 		<NavItem className="navitem">
-			<Link to={routes.HOME}>Home</Link>
+			<Link
+			className="nav1" 
+			to={routes.HOME}>Home</Link>
 		</NavItem>
 		<NavItem className="navitem">
-			<Link to={routes.ACCOUNT}>Account</Link>
+			<Link
+			className="nav1" 
+			to={routes.ACCOUNT}>Account</Link>
 		</NavItem>
-		<NavItem className="navitem">
+		<NavItem className="navbut">
 			<SignOutButton />
 		</NavItem>
 	</div>			
 
 const NavigationNonAuth = () =>
-	<div className="nav">
+	<div className="nav1">
 		<h3 className="navtitle">Navigation</h3>
 		<NavItem className="navitem">
-			<Link to={routes.HOME}>Home</Link>
+			<Link
+			className="nav1" 
+			to={routes.HOME}>Home</Link>
 		</NavItem>
 		<NavItem className="navitem">
-			<NavLink href='#'>Inspiration</NavLink>
+			<NavLink 
+			className="nav1"
+			href='#'>Inspiration</NavLink>
 		</NavItem>
 		<NavItem className="navitem">
-			<NavLink href='#'>Shop</NavLink>
+			<NavLink 
+			className="nav1"
+			href='https://www.teacherspayteachers.com/Store/Misty-Weatherford'>Shop</NavLink>
 		</NavItem>
 		<NavItem className="navitem">
-			<Link to="">Freebies</Link>
+			<Link 
+			className="nav1"
+			to="">Freebies</Link>
 		</NavItem>
 		<NavItem className="bnavitem">
-			<Link to="">Subscribe!</Link>
-		</NavItem>
+			<Link 
+			className="nav1"
+			to="">Subscribe!</Link>
+		</NavItem> 	
 	</div>  
 
 export default Navigation;

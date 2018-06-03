@@ -19,9 +19,14 @@
   margin-bottom: 20px;
 }
 
+.signinform {
+  position: absolute;
+  margin-left: 250px;
+}
+
 .navtitle {
   padding-top: 30px;
-  padding-left: 8px;
+  padding-left: 18px;
   padding-bottom: 25px;
   background-color: rgba(255, 179, 204, 0.35);
   font-size: 25px;
@@ -29,34 +34,52 @@
 
 .nav {
   background-color: rgba(255, 179, 204, 0.35);
-  width: 150px;
+  width: 175px;
   height: 510px;
   margin-top: 120px;
   margin-left: 8px;
   padding-left: 0px;
   list-style-type: none; 
+}
+
+.nav1 {
   text-decoration: none;
+  color: black;
+}
+
+.sobut {
+  margin-left: 45px;
+  margin-top: 230px;
+  border: none;
+  background-color: rgb(255, 179, 204);
+  width: 75px;
+  height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .navitem {
-  margin-left: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-left: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 20px;
-
+  color: black;
 }
 
 .bnavitem {
+  background-color: rgba(255, 179, 204, 0.35);
   font-size: 20px;
-  margin-left: 30px;
-  margin-top: 200px; 
+  padding-top: 25px;
+  padding-left: 40px;
+  padding-bottom: 25px;
+  margin-top: 160px; 
 }
 
 .img {
   position: absolute;
   bottom: 0;
   width: 100%;
-  z-index: -1;
+  z-index: -2;
 }
 
 .footer {
@@ -65,12 +88,18 @@
   height: 60px;
   width: 100%;
   bottom: 0;
+  z-index: -1;
 }
 
-.signin {
-  margin-left: 15px;
-  margin-top: 25px;
+.sicol {
+  margin-bottom: -50px;
+  padding-top: 25px;
+}
+
+.signinlink {
+  margin-left: 25px;
   text-decoration: none;
+  color: black;
 }
 
 .copy {
@@ -81,13 +110,18 @@
 
 p {
   margin-bottom: 0px;
-  margin-top: 0px;
+  margin-top: 30px;
+}
+
+.DDlink {
+  margin-left: 30px;
+  color: purple;
 }
 
 .DDme {
   float: right;
   margin-right: 15px;
-  margin-top: -25px;
+  margin-top: -55px;
   bottom: 0;
   font-size: 15px;
 }

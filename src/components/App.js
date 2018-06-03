@@ -17,6 +17,7 @@ import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
 import tulips from '../images/TULIP.png';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,6 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-          <Navigation authUser={this.state.authUser} />
           <Route
             exact path={routes.LANDING}
             component={() => <LandingPage />}
@@ -49,10 +49,12 @@ class App extends Component {
             exact path={routes.SIGN_UP}
             component={() => <SignUpPage />}
           />
+          <div className="signin">
           <Route
             exact path={routes.SIGN_IN}
             component={() => <SignInPage />}
           />
+          </div>
           <Route
             exact path={routes.PASSWORD_FORGET}
             component={() => <PasswordForgetPage />}
@@ -65,6 +67,7 @@ class App extends Component {
             exact path={routes.ACCOUNT}
             component={() => <AccountPage />}
           />
+          <Navigation authUser={this.state.authUser} />
           <img className="img" src={tulips} alt="tulips"></img>
           <Footer />
         </div>
