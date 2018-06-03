@@ -8,6 +8,9 @@ import Navigation from './Navigation';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
+import Inspiration from './Inspiration';
+import Freebies from './Freebies';
+import Subscribe from './Subscribe';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
@@ -66,6 +69,18 @@ class App extends Component {
           <Route
             exact path={routes.ACCOUNT}
             component={() => <AccountPage />}
+          />
+          <Route
+            exact path={routes.INSPIRATION}
+            component={() => <Inspiration />}
+          />
+          <Route
+            exact path={routes.FREEBIES}
+            component={() => <Freebies />}
+          />
+          <Route
+            exact path={routes.SUBSCRIBE}
+            component={() => <Subscribe />}
           />
           <Navigation authUser={this.state.authUser} />
           <img className="img" src={tulips} alt="tulips"></img>

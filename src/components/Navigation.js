@@ -41,9 +41,9 @@ const NavigationNonAuth = () =>
 			to={routes.HOME}>Home</Link>
 		</NavItem>
 		<NavItem className="navitem">
-			<NavLink 
+			<Link 
 			className="nav1"
-			href='#'>Inspiration</NavLink>
+			to={routes.INSPIRATION}>Inspiration</Link>
 		</NavItem>
 		<NavItem className="navitem">
 			<NavLink 
@@ -53,12 +53,12 @@ const NavigationNonAuth = () =>
 		<NavItem className="navitem">
 			<Link 
 			className="nav1"
-			to="">Freebies</Link>
+			to={routes.FREEBIES}>Freebies</Link>
 		</NavItem>
 		<NavItem className="bnavitem">
 			<Link 
 			className="nav1"
-			to="">Subscribe!</Link>
+			to={routes.SUBSCRIBE}>Subscribe!</Link>
 		</NavItem> 	
 	</div>  
 
