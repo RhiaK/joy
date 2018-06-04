@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 const Footer = () =>
   	<Container className="footer">
-      <Row>
+      <Row className="infoot">
         <Col className="sicol">
           <Link 
           className="signinlink"
@@ -16,10 +16,8 @@ const Footer = () =>
   				<p>© 2018 The Joyfilled Teacher. All rights reserved.</p>
   			</Col>	
   			<Col className="DDme">
-  				<p>Designed and Developed by</p>
-  				<Link 
-          className="DDlink"
-          to="http://rhiannon-kaulitzke.com">Rhiannon Kaulitzke</Link>
+  				<a href="http://rhiannon-kaulitzke.com">Designed and Developed
+          <br></br>by Rhiannon Kaulitzke</a>
   			</Col>
   		</Row>
   	</Container>			

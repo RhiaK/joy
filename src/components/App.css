@@ -15,19 +15,42 @@
 }
 
 .title{
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .signinform {
   position: absolute;
+  margin-top: 100px;
   margin-left: 250px;
 }
 
+.CStitle {
+  text-align: center; 
+  margin-left: 215px;
+  margin-right: -215px; 
+}
+
+.CSp{
+  border: solid 1px black;
+  padding: 5px;
+  margin-left: 215px;
+  margin-right: -215px;
+  background-color: white;
+  z-index: 1;
+  margin-bottom: 75px;
+}
+
+.cs {
+  margin-top: 150px;
+}
+
 .navtitle {
-  padding-top: 30px;
-  padding-left: 18px;
+  padding-top: 25px;
+  padding-left: 25px;
   padding-bottom: 25px;
+  padding-right: 23px;
+  margin-top: 0px;
   background-color: rgba(255, 179, 204, 0.35);
   font-size: 25px;
 }
@@ -35,94 +58,155 @@
 .nav {
   background-color: rgba(255, 179, 204, 0.35);
   width: 175px;
-  height: 510px;
-  margin-top: 75px;
+  position: fixed;
+  height: 530px;
+  top: 100px;
   margin-left: 8px;
   padding-left: 0px;
   list-style-type: none; 
+  z-index: 1;
+  overflow-x: hidden;
 }
 
 .nav1 {
   text-decoration: none;
   color: black;
+  text-align: center;
+  display: block;
 }
 
 .sobut {
-  margin-left: 45px;
-  margin-top: 230px;
+  margin-top: 200px;
   border: none;
   background-color: rgb(255, 179, 204);
-  width: 75px;
+  width: 95px;
   height: 30px;
   padding-right: 10px;
   padding-left: 10px;
 }
 
 .navitem {
-  margin-left: 35px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   font-size: 20px;
+  padding-left: 0px;
   color: black;
 }
 
+a.nav1:hover {
+  background-color: rgba(255, 179, 204, 0.55);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 39px;
+  padding-left: 40px;
+  text-decoration: none;
+}
+
+a.nav1.navi:hover {
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+a.nav1.navh:hover {
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+a.nav1.navs:hover {
+  padding-right: 65px;
+  padding-left: 65px;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+a.nav1.navf:hover {
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+a.nav1.nava:hover {
+  padding-right: 51px;
+  padding-left: 50px;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
 .bnavitem {
-  background-color: rgba(255, 179, 204, 0.35);
+  background-color: rgba(255, 179, 204, 0.55);
   font-size: 20px;
   padding-top: 25px;
-  padding-left: 40px;
-  padding-bottom: 25px;
-  margin-top: 160px; 
+  padding-bottom: 20px;
+  margin-top: 95px; 
 }
 
 .img {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   z-index: -2;
 }
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%!important;
+  }
+}  
+
 .footer {
   background-color: rgba(255, 179, 204, 0.35);
-  position: absolute;
+  position: fixed;
   height: 60px;
   width: 100%;
   bottom: 0;
-  z-index: -1;
+  margin-bottom: 0px;
+  z-index: 0;
 }
 
 .sicol {
-  margin-bottom: -50px;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 .signinlink {
-  margin-left: 25px;
+  margin-left: 10px;
   text-decoration: none;
   color: black;
 }
 
 .copy {
   text-align: center;
-  margin-top: -15px;
-  font-size: 18px;
+  margin-top: 5px;
+  font-size: 16px;
 }
 
-p {
-  margin-bottom: 0px;
-  margin-top: 30px;
+@media (min-width: 1365px){
+  .copy {
+    margin-top: 20px;
+  }
 }
 
-.DDlink {
-  margin-left: 30px;
-  color: purple;
+a {
+  color: black!important;
+}
+
+div.DDme.col:hover {
+  background-color: rgba(255, 179, 204, 0.65);
+  padding-right: 15px;
+  margin-top: -5px;
+  padding-top: 5px; 
 }
 
 .DDme {
   float: right;
-  margin-right: 15px;
-  margin-top: -55px;
+  position: fixed;
+  margin-right: -25px;
+  text-align: center;
+  margin-top: 10px;
   bottom: 0;
+  text-decoration: underline;
   font-size: 15px;
 }
 
