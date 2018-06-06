@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignOutButton from './SignOut';
-import { NavItem, NavLink} from 'reactstrap';
+import { NavItem } from 'reactstrap';
 import './App.css';
 
 import * as routes from '../constants/routes';

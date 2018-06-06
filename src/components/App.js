@@ -17,7 +17,6 @@ import AccountPage from './Account';
 import Header from './Header';
 import Footer from './Footer';
 import * as routes from '../constants/routes';
-import { firebase } from '../firebase/firebase';
 import tulips from '../images/TULIP.png';
 
 

@@ -12,16 +12,12 @@ const config = {
     messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID
 };
 
-const app = firebase.initializeApp(config);
+firebase.initializeApp(config);
 const db = firebase.database();
 
-if (!firebase.apps.length) {
-  app;
-}
+
 
 const auth = firebase.auth();
-console.log(app);
-console.log(db);
 const database = Rebase.createClass(db.ref('/posts'));
 export {
   auth,
