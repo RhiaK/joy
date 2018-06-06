@@ -17,7 +17,7 @@ import AccountPage from './Account';
 import Header from './Header';
 import Footer from './Footer';
 import * as routes from '../constants/routes';
-import { firebase } from '../firebase';
+import { firebase } from '../firebase/firebase';
 import tulips from '../images/TULIP.png';
 
 
@@ -31,7 +31,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
+    const database=require('../firebase/firebase');
+    database.auth.onAuthStateChanged(authUser => {
       authUser
         ? this.setState(() => ({ authUser }))
         : this.setState(() => ({ authUser: null }));

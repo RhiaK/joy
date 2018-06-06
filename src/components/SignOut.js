@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth } from '../firebase';
+import { auth } from '../firebase/firebase';
 import './App.css';
 
 const SignOutButton = () =>
