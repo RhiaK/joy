@@ -41,6 +41,11 @@
   background-color: white;
 }
 
+.posts {
+  margin-bottom: 70px;
+  padding: 10px;
+}
+
 .CStitle {
   text-align: center; 
   margin-top: 250px;
