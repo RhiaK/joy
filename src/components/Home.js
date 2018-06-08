@@ -6,10 +6,13 @@ import 'react-quill/dist/quill.snow.css';
 import renderHTML from 'react-render-html'; 
 import './App.css';
 
+
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = { 
+    this.state = {
+      title: '',
+      body: '', 
       posts: []
     };
 
@@ -38,8 +41,9 @@ class Home extends Component {
 
   onHandleChange(html) {
     this.setState({ 
-      eidtorHtml: html
+      body: html
     });
+    console.log(html);
   }
 
   onHandleSubmit(e) {
@@ -62,8 +66,8 @@ class Home extends Component {
           className="posts"
           key={key}
           >
-          <p>{post.text.title}</p>
-          <p>{renderHTML(post.text.body)}</p>
+          <h4>{post.text.title}</h4>
+          <p>{post.text.body}</p>
         </div>
       )
     });
@@ -75,7 +79,6 @@ class Home extends Component {
 
   render() {
     console.log(this.state.posts);
-    console.log(this.props.authenticated);
     return (
       <div className="container">
         <div>
@@ -97,9 +100,9 @@ class Home extends Component {
                 </div>
                 <div className="form-group">
                 <ReactQuill
-                  modules={Home.modules}
-                  formats = {Home.formats}
-                  value={this.state.value} 
+                  modules={this.modules}
+                  formats = {this.formats}
+                  value={this.state.body} 
                   placeholder="Body"
                   onChange={this.onHandleChange} 
                 />

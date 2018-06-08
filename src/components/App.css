@@ -43,8 +43,8 @@
 
 .CStitle {
   text-align: center; 
-  margin-left: 215px;
-  margin-right: -215px; 
+  margin-top: 250px;
+  margin-left: 150px;
 }
 
 .CSp{
@@ -153,9 +153,9 @@ a.nav1.nava:hover {
 .bnavitem {
   background-color: rgba(255, 179, 204, 0.55);
   font-size: 20px;
-  padding-top: 25px;
+  padding-top: 20px;
   padding-bottom: 20px;
-  margin-top: 95px; 
+  margin-top: 100px; 
 }
 
 .img {
