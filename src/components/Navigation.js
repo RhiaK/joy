@@ -6,9 +6,9 @@ import './App.css';
 
 import * as routes from '../constants/routes';
 
-const Navigation = ({authUser}) =>
+const Navigation = ({authenticated}) =>
   <div className="nav">
-    { authUser
+    { authenticated
       ? <NavigationAuth />
       : <NavigationNonAuth />
     }

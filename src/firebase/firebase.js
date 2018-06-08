@@ -18,9 +18,7 @@ const db = firebase.database();
 
 
 const auth = firebase.auth();
-const database = Rebase.createClass(db.ref('/posts'));
 export {
   auth,
-  database,
   firebase
 };

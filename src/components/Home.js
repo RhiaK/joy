@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { database } from '../firebase/firebase';
-import _ from 'lodash';
+import { firebase } from '../firebase/firebase';
 import ReactQuill from 'react-quill';
+import _ from 'lodash';
 import 'react-quill/dist/quill.snow.css';
 import renderHTML from 'react-render-html'; 
 import './App.css';
@@ -9,44 +9,36 @@ import './App.css';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      title: '',
-      body: '', 
-      posts: {}, 
-      authUser: false
+    this.state = { 
+      posts: []
     };
 
     this.onHandleSubmit = this.onHandleSubmit.bind(this);
     this.onHandleChange = this.onHandleChange.bind(this);
   }
 
-  componentDidMount() {
-    database.on('value', snapshot => {
-      this.setState({
-        posts: snapshot.val()
-      });
-    });
+  // componentDidMount() {
+  //   firebase.on('value', snapshot => {
+  //     this.setState({
+  //       posts: snapshot.val()
+  //     });
+  //   });
+  // }
+
+  componentDidMount(){
+    /* Create reference to messages in Firebase Database */
+    let Ref = firebase.database().ref('posts').orderByKey().limitToLast(100);
+    Ref.on('child_added', snapshot => {
+      /* Update React state when message is added at Firebase Database */
+      let post = { text: snapshot.val(), id: snapshot.key };
+      this.setState({ posts: [post].concat(this.state.posts) });
+    })
+    this._isMounted = true;
   }
 
-  //render posts from firebase
-  renderPosts(){
-    return _.map(this.state.posts, (post, key) => {
-      return (
-        <div 
-          className="posts"
-          key={key}
-          >
-          <h2>{post.title}</h2>
-          <p>{renderHTML(post.body)}</p>
-        </div>
-      )
-    });
-  }
-
-
-  onHandleChange(e) {
+  onHandleChange(html) {
     this.setState({ 
-      body: e 
+      eidtorHtml: html
     });
   }
 
@@ -56,20 +48,41 @@ class Home extends Component {
       title: this.state.title,
       body: this.state.body
     };
-    database.push(post);
+    firebase.push(post);
     this.setState ({
       title: '',
       body: ''
     });
   }
+  //render posts from firebase
+  renderPosts(){
+    return _.map(this.state.posts, (post, key) => {
+      return (
+        <div 
+          className="posts"
+          key={key}
+          >
+          <p>{post.text.title}</p>
+          <p>{renderHTML(post.text.body)}</p>
+        </div>
+      )
+    });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
   render() {
+    console.log(this.state.posts);
+    console.log(this.props.authenticated);
     return (
       <div className="container">
-        {this.props.authUser
-           ? (
+        <div>
             <form
-              onSubmit={this.onHandleSubmit}>
+              className="sm-10 quillc"
+              onSubmit={this.onHandleSubmit}
+            >
                 <div className="form-group">
                 <input
                   value={this.state.title}
@@ -86,19 +99,17 @@ class Home extends Component {
                 <ReactQuill
                   modules={Home.modules}
                   formats = {Home.formats}
-                  value={this.state.body} 
+                  value={this.state.value} 
                   placeholder="Body"
                   onChange={this.onHandleChange} 
                 />
                 </div>
-                <button className="btn btn-success">Post</button>
+                <button className="btn btn-success quillbut">Post</button>
             </form>
-          )
-        : null
-        }
-        <div>
-          {this.renderPosts()}
-        </div>
+            <div className="render">
+              {this.renderPosts()}
+            </div>
+          </div>
       </div> 
            
 

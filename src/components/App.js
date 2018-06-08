@@ -31,10 +31,10 @@ class App extends Component {
 
   componentDidMount() {
     const database=require('../firebase/firebase');
-    database.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? this.setState(() => ({ authUser }))
-        : this.setState(() => ({ authUser: null }));
+    database.auth.onAuthStateChanged(authenticated => {
+      authenticated
+        ? this.setState(() => ({ authenticated }))
+        : this.setState(() => ({ authenticated: null }));
     });
   }
 
@@ -82,7 +82,7 @@ class App extends Component {
             exact path={routes.SUBSCRIBE}
             component={() => <Subscribe />}
           />
-          <Navigation authUser={this.state.authUser} />
+          <Navigation authUser={this.state.authentication} />
           <img className="img" src={tulips} alt="tulips"></img>
           <Footer />
         </div>

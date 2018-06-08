@@ -26,6 +26,21 @@
   margin-left: 250px;
 }
 
+.quillc {
+  margin-top: 100px;
+  margin-left: 180px;
+}
+
+.quillbut {
+  float: right;
+}
+
+.render {
+  margin-left: 180px;
+  margin-top: 55px;
+  background-color: white;
+}
+
 .CStitle {
   text-align: center; 
   margin-left: 215px;
@@ -76,7 +91,7 @@
 }
 
 .sobut {
-  margin-top: 200px;
+  margin-top: 65px;
   border: none;
   background-color: rgb(255, 179, 204);
   width: 95px;
