@@ -1,4 +1,3 @@
-import Rebase from 're-base';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -13,7 +12,7 @@ const config = {
 };
 
 firebase.initializeApp(config);
-const db = firebase.database();
+
 
 
 

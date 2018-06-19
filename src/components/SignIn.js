@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { auth } from '../firebase/firebase';
 import * as routes from '../constants/routes';
-import * as authenticate from '../firebase/auth';
+import { doSignInWithEmailAndPassword } from '../firebase/auth';
 import './App.css';
 
 const SignInPage = ({ history }) =>
@@ -41,7 +40,8 @@ class SignInForm extends Component {
     const {
       history,
     } = this.props;
-    authenticate.doSignInWithEmailAndPassword(email, password)
+    
+    doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
         history.push(routes.HOME);

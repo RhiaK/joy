@@ -25,7 +25,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      authUser: null,
+      authenticated: null,
     };
   }
 
@@ -36,6 +36,7 @@ class App extends Component {
         ? this.setState(() => ({ authenticated }))
         : this.setState(() => ({ authenticated: null }));
     });
+    console.log(database.auth);
   }
 
 

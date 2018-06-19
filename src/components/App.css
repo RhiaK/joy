@@ -20,6 +20,16 @@
   margin-bottom: 40px;
 }
 
+.titlef {
+  border-radius: 0px!important;
+}
+
+.editor {
+  margin-top: 150px;
+  margin-left: 200px;
+  width: 500px;
+}
+
 .signinform {
   position: absolute;
   margin-top: 100px;
@@ -33,6 +43,11 @@
 
 .quillbut {
   float: right;
+  border-radius: 0px!important;
+}
+
+.qbut {
+  margin-left: 633px;
 }
 
 .render {
@@ -42,8 +57,10 @@
 }
 
 .posts {
-  margin-bottom: 70px;
+  margin-left: 190px;
+  margin-bottom: 75px;
   padding: 10px;
+  background-color: white;
 }
 
 .CStitle {
@@ -103,6 +120,7 @@
   height: 30px;
   padding-right: 10px;
   padding-left: 10px;
+  border-radius: 0px!important;
 }
 
 .navitem {

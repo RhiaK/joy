@@ -3,17 +3,17 @@ import { firebase } from '../firebase/firebase';
 import ReactQuill from 'react-quill';
 import _ from 'lodash';
 import 'react-quill/dist/quill.snow.css';
-import renderHTML from 'react-render-html'; 
+import renderHTML from 'react-render-html';
 import './App.css';
 
 
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {
+    this.state = { 
       title: '',
-      body: '', 
-      posts: []
+      body: '',
+      posts: [], 
     };
 
     this.onHandleSubmit = this.onHandleSubmit.bind(this);
@@ -39,11 +39,10 @@ class Home extends Component {
     this._isMounted = true;
   }
 
-  onHandleChange(html) {
+  onHandleChange(e) {
     this.setState({ 
-      body: html
+      body: e 
     });
-    console.log(html);
   }
 
   onHandleSubmit(e) {
@@ -52,7 +51,7 @@ class Home extends Component {
       title: this.state.title,
       body: this.state.body
     };
-    firebase.push(post);
+    firebase.database().ref('posts').push(post);
     this.setState ({
       title: '',
       body: ''
@@ -67,7 +66,7 @@ class Home extends Component {
           key={key}
           >
           <h4>{post.text.title}</h4>
-          <p>{post.text.body}</p>
+          <p>{renderHTML(post.text.body)}</p>
         </div>
       )
     });
@@ -78,10 +77,11 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.state.posts);
+    console.log(this.props.authenticated);
+    this.state.posts.length;
     return (
       <div className="container">
-        <div>
+            <div>
             <form
               className="sm-10 quillc"
               onSubmit={this.onHandleSubmit}
@@ -89,7 +89,7 @@ class Home extends Component {
                 <div className="form-group">
                 <input
                   value={this.state.title}
-                  className="form-control" 
+                  className="form-control titlef" 
                   type="text" 
                   name="title" 
                   placeholder="Title"
@@ -100,8 +100,8 @@ class Home extends Component {
                 </div>
                 <div className="form-group">
                 <ReactQuill
-                  modules={this.modules}
-                  formats = {this.formats}
+                  modules={Home.modules}
+                  formats = {Home.formats}
                   value={this.state.body} 
                   placeholder="Body"
                   onChange={this.onHandleChange} 
@@ -109,10 +109,10 @@ class Home extends Component {
                 </div>
                 <button className="btn btn-success quillbut">Post</button>
             </form>
-            <div className="render">
+            <div>
               {this.renderPosts()}
             </div>
-          </div>
+            </div>
       </div> 
            
 
