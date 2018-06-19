@@ -5,7 +5,6 @@ import {
    } from 'react-router-dom';
 
 import Navigation from './Navigation';
-import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
 import Inspiration from './Inspiration';
@@ -13,7 +12,6 @@ import Freebies from './Freebies';
 import Subscribe from './Subscribe';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
-import AccountPage from './Account';
 import Header from './Header';
 import Footer from './Footer';
 import * as routes from '../constants/routes';
@@ -46,10 +44,6 @@ class App extends Component {
         <div>
           <Header />
           <Route
-            exact path={routes.LANDING}
-            component={() => <LandingPage />}
-          />
-          <Route
             exact path={routes.SIGN_UP}
             component={() => <SignUpPage />}
           />
@@ -66,10 +60,6 @@ class App extends Component {
           <Route
             exact path={routes.HOME}
             component={() => <HomePage />}
-          />
-          <Route
-            exact path={routes.ACCOUNT}
-            component={() => <AccountPage />}
           />
           <Route
             exact path={routes.INSPIRATION}
