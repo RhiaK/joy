@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import { doSignInWithEmailAndPassword } from '../firebase/auth';
 import './App.css';
@@ -8,6 +8,10 @@ const SignInPage = ({ history }) =>
   <div className="signinform">
     <h1>Sign In</h1>
     <SignInForm history={history} />
+    <hr/>
+    <Link
+      className="nav1 navp"
+      to={routes.PASSWORD_FORGET}>Forgot your password?</Link>
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
