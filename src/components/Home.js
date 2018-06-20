@@ -77,8 +77,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.props.authenticated);
-    this.state.posts.length;
     return (
       <div className="container">
             <div>
