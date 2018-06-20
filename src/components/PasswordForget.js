@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { auth } from '../firebase/firebase';
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
+  <div className="pwforget">
+    <h1>Forgot Your Password?</h1>
     <PasswordForgetForm />
   </div>
 
