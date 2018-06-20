@@ -34,9 +34,9 @@ const NavigationAuth = () =>
 		</NavItem>
 		<NavItem className="navitem">
 			<Link
-			className="nav1 nava" 
-			to={routes.PASSWORD_CHANGE}>Password Change</Link>
-		</NavItem>
+			className="nav1 navp"
+			to={routes.PASSWORD_FORGET}>Password</Link>
+		</NavItem>	
 		<NavItem className="navbut">
 			<SignOutButton />
 		</NavItem>

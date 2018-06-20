@@ -140,9 +140,16 @@ a.nav1:hover {
   text-decoration: none;
 }
 
+a.nav1.navp:hover {
+  margin-bottom: -20px;
+  margin-top: -20px; 
+  margin-left: -1px; 
+}
+
 a.nav1.navi:hover {
   margin-bottom: -20px;
   margin-top: -20px;
+  margin-left: -1px;
 }
 
 a.nav1.navh:hover {
@@ -212,6 +219,12 @@ a.nav1.nava:hover {
   margin-left: 10px;
   text-decoration: none;
   color: black;
+}
+
+.pwforget {
+  margin-top: 150px;
+  margin-left: 100px;
+  text-align: center;
 }
 
 .copy {

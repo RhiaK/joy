@@ -5,7 +5,6 @@ import {
    } from 'react-router-dom';
 
 import Navigation from './Navigation';
-import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
 import Inspiration from './Inspiration';
 import Freebies from './Freebies';
@@ -43,10 +42,6 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-          <Route
-            exact path={routes.SIGN_UP}
-            component={() => <SignUpPage />}
-          />
           <div className="signin">
           <Route
             exact path={routes.SIGN_IN}
@@ -73,7 +68,7 @@ class App extends Component {
             exact path={routes.SUBSCRIBE}
             component={() => <Subscribe />}
           />
-          <Navigation authUser={this.state.authentication} />
+          <Navigation authenticated={this.state.authenticated} />
           <img className="img" src={tulips} alt="tulips"></img>
           <Footer />
         </div>
