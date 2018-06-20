@@ -31,11 +31,6 @@ const NavigationAuth = () =>
 			<Link 
 			className="nav1 navf"
 			to={routes.FREEBIES}>Freebies</Link>
-		</NavItem>
-		<NavItem className="navitem">
-			<Link
-			className="nav1 navp"
-			to={routes.PASSWORD_FORGET}>Password</Link>
 		</NavItem>	
 		<NavItem className="navbut">
 			<SignOutButton />
