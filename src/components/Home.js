@@ -67,6 +67,8 @@ class Home extends Component {
           >
           <h4>{post.text.title}</h4>
           <p>{renderHTML(post.text.body)}</p>
+          <button className="btn btn-warning changebut">Update</button>
+          <button className="btn btn-danger changebut">Delete</button>
         </div>
       )
     });

@@ -47,6 +47,13 @@
   border-radius: 0px!important;
 }
 
+.changebut {
+  float: left;
+  border-radius: 0px!important;
+  margin-bottom: 70px;
+
+}
+
 .qbut {
   margin-left: 633px;
 }
